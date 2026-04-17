@@ -1306,6 +1306,7 @@ export type ContentCreatorProfileCreateManyArgs<ExtArgs extends runtime.Types.Ex
    * The data used to create many ContentCreatorProfiles.
    */
   data: Prisma.ContentCreatorProfileCreateManyInput | Prisma.ContentCreatorProfileCreateManyInput[]
+  skipDuplicates?: boolean
 }
 
 /**
@@ -1324,6 +1325,7 @@ export type ContentCreatorProfileCreateManyAndReturnArgs<ExtArgs extends runtime
    * The data used to create many ContentCreatorProfiles.
    */
   data: Prisma.ContentCreatorProfileCreateManyInput | Prisma.ContentCreatorProfileCreateManyInput[]
+  skipDuplicates?: boolean
   /**
    * Choose, which related nodes to fetch as well
    */

@@ -9,6 +9,10 @@ type BootstrapBody = {
 };
 
 export async function POST(req: Request) {
+  if (process.env.NODE_ENV === "production") {
+    return NextResponse.json({ error: "not_found" }, { status: 404 });
+  }
+
   const expectedToken = process.env.BOOTSTRAP_ADMIN_TOKEN;
   const headerToken = req.headers.get("x-bootstrap-token") ?? "";
 

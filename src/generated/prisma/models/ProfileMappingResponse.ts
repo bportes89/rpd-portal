@@ -1560,6 +1560,7 @@ export type ProfileMappingResponseCreateManyArgs<ExtArgs extends runtime.Types.E
    * The data used to create many ProfileMappingResponses.
    */
   data: Prisma.ProfileMappingResponseCreateManyInput | Prisma.ProfileMappingResponseCreateManyInput[]
+  skipDuplicates?: boolean
 }
 
 /**
@@ -1578,6 +1579,7 @@ export type ProfileMappingResponseCreateManyAndReturnArgs<ExtArgs extends runtim
    * The data used to create many ProfileMappingResponses.
    */
   data: Prisma.ProfileMappingResponseCreateManyInput | Prisma.ProfileMappingResponseCreateManyInput[]
+  skipDuplicates?: boolean
 }
 
 /**

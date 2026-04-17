@@ -432,6 +432,7 @@ export type ContentCreateOrConnectWithoutCourseInput = {
 
 export type ContentCreateManyCourseInputEnvelope = {
   data: Prisma.ContentCreateManyCourseInput | Prisma.ContentCreateManyCourseInput[]
+  skipDuplicates?: boolean
 }
 
 export type ContentUpsertWithWhereUniqueWithoutCourseInput = {
@@ -1311,6 +1312,7 @@ export type ContentCreateManyArgs<ExtArgs extends runtime.Types.Extensions.Inter
    * The data used to create many Contents.
    */
   data: Prisma.ContentCreateManyInput | Prisma.ContentCreateManyInput[]
+  skipDuplicates?: boolean
 }
 
 /**
@@ -1329,6 +1331,7 @@ export type ContentCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensi
    * The data used to create many Contents.
    */
   data: Prisma.ContentCreateManyInput | Prisma.ContentCreateManyInput[]
+  skipDuplicates?: boolean
   /**
    * Choose, which related nodes to fetch as well
    */

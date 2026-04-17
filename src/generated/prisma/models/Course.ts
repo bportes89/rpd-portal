@@ -456,6 +456,7 @@ export type CourseCreateOrConnectWithoutOwnerInput = {
 
 export type CourseCreateManyOwnerInputEnvelope = {
   data: Prisma.CourseCreateManyOwnerInput | Prisma.CourseCreateManyOwnerInput[]
+  skipDuplicates?: boolean
 }
 
 export type CourseUpsertWithWhereUniqueWithoutOwnerInput = {
@@ -1350,6 +1351,7 @@ export type CourseCreateManyArgs<ExtArgs extends runtime.Types.Extensions.Intern
    * The data used to create many Courses.
    */
   data: Prisma.CourseCreateManyInput | Prisma.CourseCreateManyInput[]
+  skipDuplicates?: boolean
 }
 
 /**
@@ -1368,6 +1370,7 @@ export type CourseCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensio
    * The data used to create many Courses.
    */
   data: Prisma.CourseCreateManyInput | Prisma.CourseCreateManyInput[]
+  skipDuplicates?: boolean
   /**
    * Choose, which related nodes to fetch as well
    */

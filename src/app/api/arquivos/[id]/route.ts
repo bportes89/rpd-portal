@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/db";
 import { getAppSession } from "@/lib/session";
 import fs from "fs/promises";
+import { NextResponse } from "next/server";
 
 export const runtime = "nodejs";
 
@@ -22,6 +23,9 @@ export async function GET(
   });
 
   if (asset && asset.ownerId === userId) {
+    if (asset.storagePath.startsWith("http://") || asset.storagePath.startsWith("https://")) {
+      return NextResponse.redirect(asset.storagePath);
+    }
     const buf = await fs.readFile(asset.storagePath);
     return new Response(buf, {
       headers: {
@@ -45,6 +49,9 @@ export async function GET(
     return Response.json({ error: "Arquivo não encontrado." }, { status: 404 });
   }
 
+  if (material.storagePath.startsWith("http://") || material.storagePath.startsWith("https://")) {
+    return NextResponse.redirect(material.storagePath);
+  }
   const buf = await fs.readFile(material.storagePath);
   return new Response(buf, {
     headers: {
